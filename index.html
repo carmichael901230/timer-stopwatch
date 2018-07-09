@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Home</title>
+
+  <script type="text/javascript" src="stopwatch.js"></script>
+  <script type="text/javascript" src="timer.js"></script>
+  <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body>
+  <div class="grid-container">
+	<div class="leftItem">
+		<div style="width: 10px"> 
+		<p id="showTime">00:00:00.000</p>
+		</div>
+		<button id="start" type="button" onclick="startpause()" style="width: 250px">Start</button>
+		<button id="split" type="button" onclick="split()" disabled>Split</button>
+		<button id="reset" type="button" onclick="reset()" disabled>Reset</button>
+		<p id="showSplit" style="font-size:30px;"></p>
+	</div>
+	
+	<div class="rightItem">
+		<form id="set_time">
+		<input type="text" id="hour" placeholder="Hour">
+		<input type="text" id="minute" placeholder="Minute">
+		<input type="text" id="second" placeholder="Second">
+		</form>
+		<button id="startBtn" type="button" style="margin:0 50px 0px 100px; width=250px" onclick="start()">Start</button>
+		<button id="pauseBtn" type="button" onclick="pause()">Pause</button>
+		
+		<p id="countDown" style="margin:0 0 0 180px"></p>
+	</div>
+  </div>
+
+</body>
+</html>

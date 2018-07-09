@@ -1,0 +1,81 @@
+.leftItem {
+	grid-area: left; 
+	//border: 1px solid black;
+}
+.rightItem {
+	//border: 1px solid black;
+	grid-area: right;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:'left right';
+	grid-gap: 10px;
+	text-align: left;
+	padding: 0 0 0 0;
+	background-color: white;
+	opacity: 0.5;
+}
+
+form {
+	margin: 0px 50px;
+	//border: 1px solid black;
+}
+
+/* text box style */
+input[type=text] {
+    width: 200px;
+    padding: 12px 20px;
+    margin: 40px 0px;
+    box-sizing: border-box;
+    border: 3px solid #ccc;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 3px solid #554;
+}
+/* button style */
+button {
+	background-color: gray;
+	border: none;
+	color: white;
+	padding: 16px 50px;
+	text-align: center;
+	font-size: 16px;
+	margin: 0px 0px;
+	opacity: 0.6;
+	transition: 0.3s;
+	display: inline-block;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button:hover {opacity: 1.2}
+
+button:disabled,
+button[disabled] {
+	background-color: gray;
+	border: none;
+	color: white;
+	padding: 16px 50px;
+	text-align: center;
+	font-size: 16px;
+	margin: 0px 2px;
+	opacity: 0.6;
+	transition: 0.3s;
+	display: inline-block;
+	text-decoration: none;
+	cursor: no-drop;;
+}
+
+/* paragraph style */
+p {
+	font-family: Impact, Charcoal, sans-serif;
+	font-size: 100px;
+	font-weight: bold;
+	color: gray;
+	margin: 10px;
+}
