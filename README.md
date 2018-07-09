@@ -1,1 +1,1 @@
-# Timer-StopWatch-JS-
+# Timer StopWatch by JS
