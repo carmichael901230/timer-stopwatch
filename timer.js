@@ -15,30 +15,44 @@ function inputMilliSec() {
 }
 
 function start() {
-  // now + input = target time
+	document.getElementById("startBtn").disabled = true;
+	document.getElementById("pauseBtn").disabled = false;
+	document.getElementById("resetBtn").disabled = false;
+	// now + input = target time
 	var target = Date.now() + inputMilliSec();
-  // disable start button avoid mutiple tread
-  document.getElementById("startBtn").disabled = true;
+	// disable start button avoid mutiple tread
+	document.getElementById("startBtn").disabled = true;
 	countID = setInterval(showRemain, 100, target);
 }
 
 function showRemain(target) {
-  // keep tracking now() and its difference between target time
-  var now = Date.now();
-  var diff = target-now;
-  // convert "remian seconds" to "hour" "minute" "second"
+	document.getElementById("countDown").style.display = "block";
+	document.getElementById("set_time").style.display = "none";
+	// keep tracking now() and its difference between target time
+	var now = Date.now();
+	var diff = target-now;
+	// convert "remian seconds" to "hour" "minute" "second"
 	var remainSec = parseInt(diff/1000);
 	var hour = parseInt(remainSec/3600);
 	remainSec %= 3600;
 	var minute = parseInt(remainSec/60);
 	remainSec %= 60;
 	var second = parseInt(remainSec);
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (minute < 10) {
+		minute = "0" + minute;
+	}
+	if (second < 10) {
+		second = "0" + second;
+	}
 	document.getElementById("countDown").innerHTML = hour + ":" + minute + ":" + second;
-  // time is up, stop timer and "beep"
-  if (target <= Date.now()) {
+	// time is up, stop timer and "beep"
+	if (target <= Date.now()) {
 		clearInterval(countID);
-    alert("beep beep");
-  }
+		alert("beep beep");
+	}
 }
 
 function getRemainMilliSec() {
@@ -59,4 +73,16 @@ function pause() {
     document.getElementById("pauseBtn").innerHTML = "Pause";
     countID = setInterval(showRemain, 100, target);
   }
+}
+
+function resetTimer() {
+	clearInterval(countID);
+	document.getElementById("countDown").innerHTML = "00:00:00";
+	document.getElementById("countDown").style.display = "none";
+	document.getElementById("set_time").style.display = "block";
+	document.getElementById("pauseBtn").innerHTML = "Pause";
+	document.getElementById("startBtn").disabled = false;
+	document.getElementById("pauseBtn").disabled = true;
+	document.getElementById("resetBtn").disabled = true;
+	document.getElementById("set_time").reset();
 }

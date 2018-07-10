@@ -1,32 +1,33 @@
+/* Grid
+----------------------------
+|stop-watch    | timer     |
+|time recoding | count down|
+|btns          | btns      |
+----------------------------
+*/
 .leftItem {
 	grid-area: left; 
-	//border: 1px solid black;
 }
 .rightItem {
-	//border: 1px solid black;
 	grid-area: right;
 }
-
 .grid-container {
 	display: grid;
-	grid-template-areas:'left right';
+	grid-template-areas:'left right'; 
 	grid-gap: 10px;
 	text-align: left;
 	padding: 0 0 0 0;
 	background-color: white;
 	opacity: 0.5;
+	grid-template-columns: 1fr 1fr; /* set fixed width */
 }
 
-form {
-	margin: 0px 50px;
-	//border: 1px solid black;
-}
 
 /* text box style */
 input[type=text] {
     width: 200px;
     padding: 12px 20px;
-    margin: 40px 0px;
+    margin: 48px 0px;
     box-sizing: border-box;
     border: 3px solid #ccc;
     -webkit-transition: 0.5s;
@@ -46,11 +47,13 @@ button {
 	text-align: center;
 	font-size: 16px;
 	margin: 0px 0px;
-	opacity: 0.6;
+	opacity: 1;
 	transition: 0.3s;
 	display: inline-block;
 	text-decoration: none;
 	cursor: pointer;
+	position: left;
+	width: 200px;
 }
 
 button:hover {opacity: 1.2}
@@ -63,12 +66,15 @@ button[disabled] {
 	padding: 16px 50px;
 	text-align: center;
 	font-size: 16px;
-	margin: 0px 2px;
-	opacity: 0.6;
+	margin: 0px 0px;
+	opacity: 0.4;
 	transition: 0.3s;
 	display: inline-block;
 	text-decoration: none;
-	cursor: no-drop;;
+	cursor: no-drop;
+	position: left;
+	width: 200px;
+	transition: 0.3s;
 }
 
 /* paragraph style */
@@ -78,4 +84,5 @@ p {
 	font-weight: bold;
 	color: gray;
 	margin: 10px;
+	transition: 0.3s;
 }

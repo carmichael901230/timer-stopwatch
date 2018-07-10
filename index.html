@@ -15,22 +15,25 @@
 		<div style="width: 10px"> 
 		<p id="showTime">00:00:00.000</p>
 		</div>
-		<button id="start" type="button" onclick="startpause()" style="width: 250px">Start</button>
+		<button id="start" type="button" onclick="startpause()">Start</button>
 		<button id="split" type="button" onclick="split()" disabled>Split</button>
 		<button id="reset" type="button" onclick="reset()" disabled>Reset</button>
 		<p id="showSplit" style="font-size:30px;"></p>
 	</div>
 	
 	<div class="rightItem">
+		<div style="width: 10px"> 
+		<p id="countDown" style="display:none"></p>
+		</div>
 		<form id="set_time">
 		<input type="text" id="hour" placeholder="Hour">
 		<input type="text" id="minute" placeholder="Minute">
 		<input type="text" id="second" placeholder="Second">
 		</form>
-		<button id="startBtn" type="button" style="margin:0 50px 0px 100px; width=250px" onclick="start()">Start</button>
-		<button id="pauseBtn" type="button" onclick="pause()">Pause</button>
-		
-		<p id="countDown" style="margin:0 0 0 180px"></p>
+		<button id="startBtn" type="button" onclick="start()">Start</button>
+		<button id="pauseBtn" type="button" onclick="pause()" disabled>Pause</button>
+		<button id="resetBtn" type="button" onclick="resetTimer()" disabled>Reset</button>
+		<p id="countDown"></p>
 	</div>
   </div>
 
