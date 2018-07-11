@@ -8,8 +8,14 @@
 .leftItem {
 	grid-area: left; 
 }
+.leftItem:hover {
+	background-color: #e5e5e5;
+}
 .rightItem {
 	grid-area: right;
+}
+.rightItem:hover {
+	background-color: #e5e5e5;
 }
 .grid-container {
 	display: grid;
@@ -19,6 +25,7 @@
 	padding: 0 0 0 0;
 	background-color: white;
 	opacity: 0.5;
+	width: 1250px;	
 	grid-template-columns: 1fr 1fr; /* set fixed width */
 }
 
@@ -76,6 +83,8 @@ button[disabled] {
 	width: 200px;
 	transition: 0.3s;
 }
+
+
 
 /* paragraph style */
 p {
