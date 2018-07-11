@@ -51,6 +51,8 @@ function showRemain(target) {
 	// time is up, stop timer and "beep"
 	if (target <= Date.now()) {
 		clearInterval(countID);
+		document.getElementById("startBtn").disabled = true;
+		document.getElementById("pauseBtn").disabled = true;
 		alert("beep beep");
 	}
 }
